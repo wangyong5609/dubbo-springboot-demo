@@ -1,0 +1,10 @@
+server:
+  port: 9001
+dubbo:
+  application:
+    name: site-service-boot-provider
+  registry:
+    address: zookeeper://192.168.88.11:2181
+  protocol:
+    name: dubbo
+    port: 20882
