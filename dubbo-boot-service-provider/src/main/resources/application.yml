@@ -5,6 +5,17 @@ dubbo:
     name: site-service-boot-provider
   registry:
     address: zookeeper://192.168.88.11:2181
-  protocol:
-    name: dubbo
-    port: 20882
+  protocols:
+    protocol1:
+      id: dubbo1
+      name: dubbo
+      port: 20882
+      host: 0.0.0.0
+    protocol2:
+      id: dubbo2
+      name: dubbo
+      port: 20883
+      host: 0.0.0.0
+#  protocol:
+#    name: dubbo
+#    port: 20882

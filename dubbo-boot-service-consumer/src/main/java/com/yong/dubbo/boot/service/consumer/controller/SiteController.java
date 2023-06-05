@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/site")
 public class SiteController {
     // <dubbo:reference
-    @Reference
+    @Reference(version = "async")
     private SiteService siteService;
 
     @GetMapping("/name")
