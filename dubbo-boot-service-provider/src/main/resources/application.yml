@@ -7,9 +7,9 @@ dubbo:
     address: zookeeper://192.168.88.11:2181
   protocols:
     protocol1:
-      id: rest
-      name: rest
-      port: 8083
+      id: dubbo1
+      name: dubbo
+      port: 20882
       host: 0.0.0.0
     protocol2:
       id: dubbo2

@@ -8,11 +8,15 @@ import org.apache.dubbo.rpc.RpcContext;
 /**
  * 如果未指定协议的话，则会为每一个协议创建一个此服务
  */
-@Service(version = "default")
-public class SiteServiceImpl implements SiteService {
+@Service(version = "timeout", timeout = 4000)
+public class TimeoutSiteServiceImpl implements SiteService {
     @Override
     public String getName(String name) {
-        URL url = RpcContext.getContext().getUrl();
-        return String.format("ip: %s, protocol: %s, port: %s", url.getIp(), url.getProtocol(), url.getPort());
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return "timeout";
     }
 }

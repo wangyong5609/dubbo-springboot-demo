@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/site")
 public class SiteController {
     // <dubbo:reference
-    @Reference(version = "async")
-    private SiteService siteService;
-
+//    @Reference(version = "async")
+//    @Reference(version = "default", url = "dubbo://192.168.88.1:20883/com.yong.api.SiteService:default")
+    @Reference(version = "timeout", timeout = 3000)
+    private SiteService siteServiceA;
     @GetMapping("/name")
     public String getName(String name) {
-        return siteService.getName(name);
+        return siteServiceA.getName(name);
     }
 }
