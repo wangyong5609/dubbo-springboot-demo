@@ -1,5 +1,7 @@
 package com.yong.api;
 
+import java.util.concurrent.CompletableFuture;
+
 public interface SiteService {
 
     String getName(String name);
@@ -8,4 +10,7 @@ public interface SiteService {
         return null;
     }
 
+    default CompletableFuture<String> siteAsync(String name) {
+        return null;
+    }
 }
