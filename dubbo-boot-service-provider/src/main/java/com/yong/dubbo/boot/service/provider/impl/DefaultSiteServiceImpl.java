@@ -9,7 +9,7 @@ import org.apache.dubbo.rpc.RpcContext;
  * 如果未指定协议的话，则会为每一个协议创建一个此服务
  */
 @Service(version = "default")
-public class SiteServiceImpl implements SiteService {
+public class DefaultSiteServiceImpl implements SiteService {
     @Override
     public String getName(String name) {
         URL url = RpcContext.getContext().getUrl();
